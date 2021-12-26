@@ -12,7 +12,25 @@ Note there are different versions of Python available for running on the EV3.  T
 To run on an EV3, you'll need the following:
 - MicroSD Card (4GB to 32GB of type microSDHC) to store the operating system and python programs on the EV3
 - MicroSD Card reader or adapter to write the OS to the MicroSD Card
-- Wifi USB dongle to connect to the EV3 wirelessly using Microsoft Visual Code Studio (not required, but recommended)
+- Wifi USB dongle to connect to the EV3 wirelessly using Microsoft Visual Code Studio (not required, but recommended).  
+## Connecting to the EV3 Bot
+<ul>
+  <li>USB Cable: Wired programming of the EV3 is supported
+  <li> Wifi: Adding a USB dongle to the EV3 allows for the bot to be programmed using wifi.  Connection instructions provided below.
+  <ol>
+    <li> Insert the dongle when the bot is off 
+    <li> Power up the EV3 and wait for the bot to fully boot
+    <li> Navigate and select the "Wireless and Networks" menu option
+    <li> Navigate and select the "Wi-Fi" menum option
+    <li> If needed, select the "Powered" menu option to enable the Wifi.  The check box should be filled in once selected.
+    <li> Click the "Start Scan" menu option to select identify available Wifi networks
+    <li> Once the scan is complete, select the desired Wifi network.  This must be the same Wifi network as used by the computer used to program the EV3.
+    <li> Enter the Wifi password, the click "ok"
+    <li> Wait for the wifi to configure and associate.
+  </ol>
+<li> Bluetooth: Other ev3 Python users have reported that Bluetooth is not reliable and is therefore not currently recommended.
+</ul>
+
 ## Lessons
 - Start Here! Write and simulate your first Python Program
 - TBD
