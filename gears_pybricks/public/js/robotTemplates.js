@@ -45,6 +45,7 @@ var robotTemplates = [
     wheelFriction: 10,
     bodyFriction: 0,
     casterFriction: 0, // Warning: No effect due to parenting
+    casterDiameter: 1.8,
 
     components: [
       {
