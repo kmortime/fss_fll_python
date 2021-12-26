@@ -1,37 +1,38 @@
 var robotTemplates = [
-    { name: 'fsssingleFollower',
-    shortDescription: 'FSS Single Sensor Line Follower',
+    { name: 'fssfllsingleFollower',
+    shortDescription: 'FSS FLL Single Sensor Line Follower',
     longDescription:
       '<p>This robot is equipped with a single color sensor for line following.</p>' +
-      '<p>An electromagnet at the bottom of the robot lets you pick up magnetic objects.</p>' +
-      '<p>It\'s good for learning the basics of line following, but some line following maps will require double sensors.</p>',
+      '<p>For use with the FSS FLL Spring Training.</p>' +
+      '<p>It\'s good for learning the basics of programming in python</p>',
     longerDescription:
       '<h3>Dimensions</h3>' +
       '<ul>' +
         '<li>Wheel Diameter: 5.6 cm</li>' +
-        '<li>Wheel Spacing: 15.2 cm</li>' +
+        '<li>Wheel Spacing: 11.1 cm</li>' +
       '</ul>' +
       '<h3>Actuators</h3>' +
       '<ul>' +
-        '<li>Port A : Left Wheel</li>' +
-        '<li>Port B : Right Wheel</li>' +
-        '<li>Port C : Electromagnet</li>' +
+        '<li>Port A : None</li>' +
+        '<li>Port B : Left Wheel</li>' +
+        '<li>Port C : Right Wheel</li>' +
+        '<li>Port D : None</li>' +
       '</ul>' +
       '<h3>Sensors</h3>' +
       '<ul>' +
         '<li>Port 1 : Color Sensor</li>' +
-        '<li>Port 2 : Ultrasonic Distance</li>' +
-        '<li>Port 3 : Gyro</li>' +
-        '<li>Port 4 : GPS Sensor</li>' +
+        '<li>Port 2 : None</li>' +
+        '<li>Port 3 : None</li>' +
+        '<li>Port 4 : None</li>' +
       '</ul>',
     thumbnail: 'images/robots/singleFollower.jpg',
 
-    bodyHeight: 4,
-    bodyWidth: 14,
-    bodyLength: 16,
+    bodyHeight: 10,
+    bodyWidth: 9,
+    bodyLength: 13,
 
     wheelDiameter: 5.6,
-    wheelWidth: 0.8,
+    wheelWidth: 1.4,
     wheelToBodyOffset: 0.2,
 
     bodyEdgeToWheelCenterY: 1,
@@ -50,28 +51,6 @@ var robotTemplates = [
         type: 'ColorSensor',
         position: [0, -1, 9],
         rotation: [Math.PI/2, 0, 0],
-        options: null
-      },
-      {
-        type: 'UltrasonicSensor',
-        position: [0, 2.5, 8],
-        rotation: [0, 0, 0],
-        options: null
-      },
-      {
-        type: 'GyroSensor',
-        position: [0, 2.5, 2.5],
-        options: null
-      },
-      {
-        type: 'GPSSensor',
-        position: [0, 2.5, 5],
-        options: null
-      },
-      {
-        type: 'MagnetActuator',
-        position: [0, -1, 3],
-        rotation: [0, 0, 0],
         options: null
       }
     ]
