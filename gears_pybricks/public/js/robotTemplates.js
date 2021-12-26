@@ -9,7 +9,7 @@ var robotTemplates = [
       '<h3>Dimensions</h3>' +
       '<ul>' +
         '<li>Wheel Diameter: 5.6 cm</li>' +
-        '<li>Wheel Spacing: 11.1 cm</li>' +
+        '<li>Wheel Spacing: 10.1 cm</li>' +
       '</ul>' +
       '<h3>Actuators</h3>' +
       '<ul>' +
