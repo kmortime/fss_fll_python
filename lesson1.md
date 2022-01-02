@@ -25,7 +25,9 @@
     * Try adjusting the robot speed which is the first number "150" in the drive function "robot.drive(150, 0)"
     * Try adjusting the turn angle which is the second number "0" in the drive function
     * Try adjusting how far the robot drives which is the "1400" in the while loop "while motorB.angle() <= 1400:"
-   
+
+4. Go to the "Simulator" tab and click the play button to run the simulation.
+
 ```python
 #!/usr/bin/env python3
 
