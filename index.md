@@ -26,11 +26,12 @@ To run on an EV3, you'll need the following:
   7. Once the scan is complete, select the desired Wifi network.  This must be the same Wifi network as used by the computer used to program the EV3.
   8. Enter the Wifi password, the click "ok"
   9. Wait for the wifi to configure and associate.
+
 - Bluetooth: Other ev3 Python users have reported that Bluetooth is not reliable and is therefore not currently recommended.
 
 ## Lessons
-- [Lesson 1](./lesson1.md): Using the simulator write a python script to move virtual blocks into scoring areas 
-- [Lesson 2](./lesson2.md): Use the EV3 robot write a python script to move blocks into scoring areas
+- [Lesson 1](./lesson1.md) : Using the simulator write a python script to move virtual blocks into scoring areas 
+- Lesson 2 : Use the EV3 robot write a python script to move blocks into scoring areas
 
 ## Code Repo
 Github Repo for FSS Python code:
