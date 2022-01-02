@@ -1,7 +1,7 @@
 # FSS FLL Python Information
 ## Getting Started
 ### Using the Simulator
-You don't need anything!  Just head over to the [FSS Gears Pybricks Simulator](https://kmortime.github.io/fss_fll_python/gears_pybricks/public/)
+You don't need anything!  Just head over to the [FSS Gears Pybricks Simulator](https://kmortime.github.io/gears_pybricks/public/)
 ### Using the EV3 Bot
 Official Lego Education instructions on how to get an EV3 bot up and running with Python: 
 
@@ -32,13 +32,13 @@ To run on an EV3, you'll need the following:
 </ul>
 
 ## Lessons
-- Start Here! Write and simulate your first Python Program
-- TBD
+- [Lesson 1](./lesson1.md): Using the simulator write a python script to move virtual blocks into scoring areas 
+- [Lesson 2](./lesson2.md): Use the EV3 robot write a python script to move blocks into scoring areas
 ## Code Repo
 Github Repo for FSS Python code:
 https://github.com/kmortime/fss_fll_python/
 ## Simulation
-[RUN THE SIMULATOR](https://kmortime.github.io/fss_fll_python/gears_pybricks/public/)
+[RUN THE SIMULATOR](https://kmortime.github.io/gears_pybricks/public/)
 
 A EV3 robot simulation can be used to create python scripts and try them out on virtual robot.
 
