@@ -28,6 +28,7 @@
 
 4. Go to the "Simulator" tab and click the play button to run the simulation.
     * Here's what you should see happen: [Lesson #1 video](https://www.youtube.com/watch?v=i261_M4IzYk)
+
 ```python
 #!/usr/bin/env pybricks-micropython
 
