@@ -27,9 +27,9 @@
     * Try adjusting how far the robot drives which is the "1400" in the while loop "while motorB.angle() <= 1400:"
 
 4. Go to the "Simulator" tab and click the play button to run the simulation.
-
+    * Here's what you should see happen: [Lesson #1 video](https://www.youtube.com/watch?v=i261_M4IzYk)
 ```python
-#!/usr/bin/env python3
+#!/usr/bin/env pybricks-micropython
 
 ######################################################
 # Basic setup for FSS FLL Spring Training Robot
@@ -61,14 +61,25 @@ color_sensor_in1 = ColorSensor(Port.S1)
 ################################
 
 # Attempt to push block into M08 Food Circle
-while motorB.angle() <= 1400:
+print("Pushing Block into M08 Food Circle...\n")
+while motorB.angle() <= 900:
   robot.drive(150, 0)
 robot.stop()
-robot.reset()
+print("MotorB has reached angle " + str(motorB.angle()))
+motorB.reset_angle(angle=0)
+motorC.reset_angle(angle=0)
+robot.stop()
+left_motor.brake()
+right_motor.brake()
 
 # Return to the launch Area
-while motorB.angle() >= -1400:
+print("Returning to the launch area...\n")
+while motorB.angle() >= -900:
   robot.drive(-150, 0)
 robot.stop()
-robot.reset()
+left_motor.brake()
+right_motor.brake()
+print("MotorB has reached angle "+ str(motorB.angle()))
+motorB.reset_angle(angle=0)
+motorC.reset_angle(angle=0)
 ```
