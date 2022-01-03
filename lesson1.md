@@ -27,7 +27,7 @@
     * Try adjusting how far the robot drives which is the "1400" in the while loop "while motorB.angle() <= 1400:"
 
 4. Go to the "Simulator" tab and click the play button to run the simulation.
-    * Here's what you should see happen: [Lesson #1 video](https://www.youtube.com/watch?v=i261_M4IzYk) 
+    * Here's what you should see happen: [Lesson #1 video](https://www.youtube.com/watch?v=SjU45OVglmE) 
 
 
 
