@@ -1,4 +1,5 @@
-# Lesson #1: Using the simulator and the FSS FLL Spring Training Game, write a Python program to move a block to the M08 Scoring area.
+# Lesson #1: Create and Simulate Your First Python Program
+Need help?  [Watch this FSS FLL Lesson #1 Help video](https://www.youtube.com/watch?v=y2BogIjEfSk)
 
 1. In a different browser window or browser tab start the simulator: [Launch FSS FLL Simulator](https://kmortime.github.io/gears_pybricks/public/)
   * Once in the simulator, navigate between programming and running the bot using the menu tabs in the upper left.  Try navigating between the menu options.
@@ -27,7 +28,8 @@
     * Try adjusting how far the robot drives which is the "1400" in the while loop "while motorB.angle() <= 1400:"
 
 4. Go to the "Simulator" tab and click the play button to run the simulation.
-    * Here's what you should see happen: [Lesson #1 video](https://www.youtube.com/watch?v=SjU45OVglmE) 
+
+5. After Creating the program, save it to your computer using the menu "File->Save Python to my computer"
 
 
 
