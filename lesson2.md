@@ -1,10 +1,10 @@
 # Lesson #2: Program the EV3 robot using Microsoft Studio Code
 
-[Lesson #2 Help Video](xxx)
+Need help? [Watch this FSS FLL Lesson #2 Help video](xxx)
 
 If you have not done so already, install both Micropython on your EV3 robot and Microsoft Visual Studion following the instructions provided by lego education.
 
-[Install Instructions](https://education.lego.com/en-us/product-resources/mindstorms-ev3/teacher-resources/python-for-ev3)
+[LEGO Education's Install Instructions](https://education.lego.com/en-us/product-resources/mindstorms-ev3/teacher-resources/python-for-ev3)
 
 In this lesson, we will use the python program saved from the simulator in lesson #1 to program the EV3 bot which moves the food into the M08 scoring circle.
 
