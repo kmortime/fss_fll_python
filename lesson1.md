@@ -1,6 +1,10 @@
 # Lesson #1: Create and Simulate Your First Python Program
 Need help?  [Watch this FSS FLL Lesson #1 Help video](https://www.youtube.com/watch?v=y2BogIjEfSk)
 
+<p align="center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/y2BogIjEfSk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
+
 1. In a different browser window or browser tab start the simulator: [Launch FSS FLL Simulator](https://kmortime.github.io/gears_pybricks/public/)
   * Once in the simulator, navigate between programming and running the bot using the menu tabs in the upper left.  Try navigating between the menu options.
   * **Blocks:** Allows for using Scratch like programming blocks to build a Python program.  
