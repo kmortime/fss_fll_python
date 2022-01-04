@@ -4,7 +4,7 @@ In [Lesson 1](./lesson1.md) you learned how to create a simple program to solve 
 
 In [Lesson 2](./lesson2.md) you learned how to load a python program onto the EV3 and run it to again solve mission M08 this time with a real-world robot.  
 
-In this lesson you will solve mission M09 which is to move the food cube at the far side of the game mat into the M09 scoring area.  An example program is provided below.  Copy and paste this into the simulator to try it out and then try changing it to make it work differently.
+In this lesson you will solve mission M09 which is to move the food cube at the far side of the game mat into the M09 scoring area.  An example program is provided below.  Copy and paste this into [the FSS FLL Simulator](https://kmortime.github.io/gears_pybricks/public/) to try it out and then try changing it to make it work differently.
 
 When running the example program in the simulator:
   * Notice how the print() function calls in the program are displayed in the console at the bottom of the simulator.  Try adding another print statement
