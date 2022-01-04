@@ -16,3 +16,7 @@ In this lesson, we will use the python program saved from the simulator in lesso
 6. In Visual Studio Code connect to the EV3 robot by clicking "EV3DEV DEVICE BROWSER" then "Click here to connect to a device" and then click on the device.  When connected a green circle should appear next to the ev3dev robot under the "EV3DEV DEVICE BROWSER."
 7. Download the workspace to the ev3dev robot by clicking the download icon which appears when hovering your mouse over "EV3DEV DEVICE BROWSER"
 8. Once the code is downloaded onto the EV3 robot, use the buttons to navigate to your project folder and select&run the python program.
+
+Comparison video of the same program running in the simulation environment and the real-world EV3 robot:
+
+[Watch the video](https://www.youtube.com/watch?v=SjU45OVglmE)
