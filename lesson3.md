@@ -1,9 +1,28 @@
 # FSS FLL Lesson 3: Line Following
 
-This program follows the line and pushes the food block into the M09 scoring circle.
+In [Lesson 1](./lesson1.md) you learned how to create a simple program to solve mission M08, run the simulator and save the python program to your computer.  
 
-```code python
+In [Lesson 2](./lesson2.md) you learned how to load a python program onto the EV3 and run it to again solve mission M08 this time with a real-world robot.  
 
+In this lesson you will solve mission M09 which is to move the food cube at the far side of the game mat into the M09 scoring area.  An example program is provided below.  Copy and paste this into the simulator to try it out and then try changing it to make it work differently.
+
+When running the example program in the simulator:
+  * Notice how the print() function calls in the program are displayed in the console at the bottom of the simulator.  Try adding another print statement
+  * Notice there is a wait(time_in_ms) function that can be used to pause the program.  Try change the delay to 2.5 Seconds.  Remember that 1000 mS equals 1 Second.
+  * Notice the tank turn function call robot.turn(angle).  Try using both positive and negative turn angles. 
+  * Try changing the speed of the robot which is the first number in the robot.drive(speed,turn_angle) function call.
+  * Try solving the mission in your own unique way, perhaps without line following.  Can you make this relialble?
+  * After solving the mission in your own unique way add additional robot movement to return to launch quarter circle.
+
+Once you have modified the mission so it returns to base and have it working in the simulator, save the python program to your computer, load it into Microsoft Code Studio, download it to your EV3, and try it out.
+  * Does it work the same as in the simulator?  
+  * If the real-world EV3 doesn't work the same as the simulator, why do you think this is?
+
+## Example Program For FSS FLL Lesson 3
+This program moves out of the start area, follows the line to the far side of the game mat, squares up on the wall, and pushes the food block into the M09 scoring circle.
+
+
+```python
 #!/usr/bin/env pybricks-micropython
 
 ######################################################
@@ -33,6 +52,9 @@ color_sensor_in1 = ColorSensor(Port.S1)
 ###################################
 # Here is where your code starts
 ###################################
+
+# Lesson #3
+# FSS FLL Spring Training
 
 # Proportional Gain for line following
 pd = -0.8
@@ -66,7 +88,7 @@ print("------------------------------------------\n")
 
 # Follow the line to the end.
 print("------------------------------------------")
-line_follow_rotations = 3.8
+line_follow_rotations = 3.5
 print("Follow the line for " + str(line_follow_rotations) + " rotations...")
 
 while motorB.angle() <= line_follow_rotations * 360:
@@ -75,10 +97,16 @@ while motorB.angle() <= line_follow_rotations * 360:
 robot.stop()
 left_motor.brake()
 right_motor.brake()
+print("Pause for one second (1000 mSec)")
+wait(1000)
 print("MotorB has reached rotations of " + str(motorB.angle()/360))
 motorB.reset_angle(angle=0)
 motorC.reset_angle(angle=0)
+robot.stop()
+left_motor.brake()
+right_motor.brake()
 print("------------------------------------------\n")
+
 
 # Turn towards the wall
 print("------------------------------------------")
@@ -134,7 +162,7 @@ print("------------------------------------------\n")
 # Push block into M09 scoring circle
 print("------------------------------------------")
 print("Push block into M09 scoring circle...")
-while motorB.angle() <= 200:
+while motorB.angle() <= 300:
   robot.drive(100, 0)
 robot.stop()
 left_motor.brake()
