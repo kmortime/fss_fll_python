@@ -1,6 +1,6 @@
 # Lesson #2: Program the EV3 robot using Microsoft Studio Code
 
-Need help? [Watch this FSS FLL Lesson #2 Help video](xxx)
+Need help? [Watch this FSS FLL Lesson #2 Help video](https://youtu.be/IdpXzSFk1mw)
 
 If you have not done so already, install both Micropython on your EV3 robot and Microsoft Visual Studion following the instructions provided by lego education.
 
