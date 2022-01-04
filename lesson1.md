@@ -1,5 +1,4 @@
 # Lesson #1: Create and Simulate Your First Python Program
-Need help?  [Watch this FSS FLL Lesson #1 Help video](https://www.youtube.com/watch?v=y2BogIjEfSk)
 
 <p align="center">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/y2BogIjEfSk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
