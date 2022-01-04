@@ -1,5 +1,9 @@
 # FSS FLL Lesson 3: Line Following
 
+<p align="center">
+ <iframe width="560" height="315" src="https://www.youtube.com/embed/0mNdR8Xo3ho" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+ </p>
+ 
 In [Lesson 1](./lesson1.md) you learned how to create a simple program to solve mission M08, run the simulator and save the python program to your computer.  
 
 In [Lesson 2](./lesson2.md) you learned how to load a python program onto the EV3 and run it to again solve mission M08 this time with a real-world robot.  
