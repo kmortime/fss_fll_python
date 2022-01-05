@@ -48,3 +48,5 @@ A EV3 robot simulation can be used to create python scripts and try them out on 
 ### The fine print:
 This simulation above is a clone of the [https://github.com/kendmaclean/gears_pybricks/](https://github.com/kendmaclean/gears_pybricks/) repository which itself is a fork of the [https://github.com/QuirkyCort/gears](https://github.com/QuirkyCort/gears) repository initially created by the great people at [https://www.aposteriori.com.sg/](https://www.aposteriori.com.sg/)
 ## More Resources
+
+* [Pybricks Documentation](https://pybricks.com/ev3-micropython/index.html)
