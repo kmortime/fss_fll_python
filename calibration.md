@@ -1,5 +1,9 @@
 # Calibration Routine For FSS FLL Spring Training Robot
 
+<p align="center">
+<iframe width="560" height="315" src="https://youtu.be/BGYnlN3-ZhU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
+
 Calibrating the color sensor is an part important of line following.  A line following routine will typically attempt to turn the robot to keep 
 the color sensor directly above the edge of parallel black and white lines.  The robot does this by calculating the color sensor's reflected light intensity and comparing that to a threshold.
 The threshold is calculated based on a value between the black and white values typically (white - black) / 2.
