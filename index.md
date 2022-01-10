@@ -33,7 +33,7 @@ To run on an EV3, you'll need the following:
 - [Lesson 1](./lesson1.md) : Using the simulator write a python script to move virtual blocks into scoring areas 
 - [Lesson 2](./lesson2.md) : Use the EV3 robot write a python script to move blocks into scoring areas
 - [Lesson 3](./lesson3.md) : Use a new program to solve M09 using both the simulator and real-world EV3 bot.
-- [Color Sensor Calibration](calibrate.md) : Color Sensor Calibration Routine for line following
+- [Color Sensor Calibration](calibration.md) : Color Sensor Calibration Routine for line following
 ## Code Repo
 Github Repo for FSS Python code:
 https://github.com/kmortime/fss_fll_python/
