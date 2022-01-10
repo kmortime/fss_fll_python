@@ -11,6 +11,8 @@ The python program below contains two functions.
 - __read_calibration():__ Retrieves the calibration values stored by the do_calibration() routine and returns them to the user as [black_value,white_value]
 
 The program also contains example function calls.  Execution of the program will perform the do_calibration() and read_calibration() routines.
+
+This approach is based off of the great example provided here: [https://github.com/bashir2/penguins_fll_2021](https://github.com/bashir2/penguins_fll_2021)
 ```python
 #!/usr/bin/env pybricks-micropython
 
