@@ -76,9 +76,10 @@ def read_calibration():
         white_value = 100
         ev3.screen.draw_text(0, 60, "BLACK:" + str(black_value))
         ev3.screen.draw_text(0, 80, "WHITE:" + str(white_value))
+    file_handler.close()
     wait(2000)
     return black_value, white_value
-
+   
 def do_calibration():
     '''
     Calibration routine for color sensor on port #1
