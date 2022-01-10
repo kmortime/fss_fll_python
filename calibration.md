@@ -1,10 +1,10 @@
 # Calibration Routine For FSS FLL Spring Training Robot
 
-Calibrating the color sensor is an important for line following.  A line following routine will typically attempt to turn the robot to keep 
+Calibrating the color sensor is an part important of line following.  A line following routine will typically attempt to turn the robot to keep 
 the color sensor directly above the edge of parallel black and white lines.  The robot does this by calculating the color sensor's reflected light intensity and comparing that to a threshold.
 The threshold is calculated based on a value between the black and white values typically (white - black) / 2.
 
-In order for the threshold to be calculated correctly, the white and black values must be determined.  These values will change based on the lighting in the room and game mat so it is recommended to run a calibration routine ahead of a competitive match.
+In order for the threshold to be calculated correctly, the white and black values must be determined.  These values will change based on the lighting in the room and game mat so it is recommended to run a calibration routine ahead of each competitive match.
 
 The python program below contains two functions.
 - __do_calibration():__ Prompts the user to place the robot's color sensor above a black line and then a white line and records the refelected light intensity.  The values are then saved to a file for later use.
@@ -165,7 +165,7 @@ def do_calibration():
     file_handler.close()
 
 ########################################
-# do_calibrate()
+# do_calibration()
 # Perform sensor calibration routine
 #
 # This is an example of the function call 
