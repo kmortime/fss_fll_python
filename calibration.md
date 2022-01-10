@@ -1,7 +1,7 @@
 # Calibration Routine For FSS FLL Spring Training Robot
 
 <p align="center">
-<iframe width="560" height="315" src="https://youtu.be/BGYnlN3-ZhU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=BGYnlN3-ZhU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
 
 Calibrating the color sensor is an part important of line following.  A line following routine will typically attempt to turn the robot to keep 
