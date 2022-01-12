@@ -43,20 +43,20 @@ right_motor = motorC
 robot = DriveBase(left_motor, right_motor, wheel_diameter=56, axle_track=108)
 robot.settings(straight_speed=200, straight_acceleration=100, turn_rate=100)
 
-color_sensor_in1 = ColorSensor(Port.S1)
+
 
 ###################################
 # Here is where your code starts
 ###################################
 
 # Read the color sensor Calibration
-def read_calibration():
+def read_calibration(port):
     '''
-    Reads the previously stored calibration values
+    Reads the previously stored calibration value for the input port
     and returns [black_value,white_value] as the lower
     and upper bounds of the reflected light
     '''
-
+    
     # Setup the Font Type and Size
     ev3.screen.set_font(Font(None,20))
 
@@ -66,12 +66,15 @@ def read_calibration():
     # Open the Calibration File
     try:
         file_handler = open("Calibration.txt", "r")
-        black_value = int(file_handler.readline())
-        white_value = int(file_handler.readline())
-        ev3.screen.draw_text(0, 0,  "Retrieving Stored")
-        ev3.screen.draw_text(0, 20, "Calibraion Values:")
+        calibration_file = file_handler.readlines()
+        file_handler.close()
+        [port,black_value,white_value] = [x.strip() for x in calibration_file[port + 1].split(",")]
+        ev3.screen.draw_text(0, 0,  "Port " + str(port))
+        ev3.screen.draw_text(0, 20, "Reading Stored")
+        ev3.screen.draw_text(0, 40, "Calibration Values:")
         ev3.screen.draw_text(0, 60, "BLACK:" + str(black_value))
         ev3.screen.draw_text(0, 80, "WHITE:" + str(white_value))
+        wait(2000)
     except OSError:
         # Calibration File was not found.  Use default
         # values of 0 and 100
@@ -82,13 +85,12 @@ def read_calibration():
         white_value = 100
         ev3.screen.draw_text(0, 60, "BLACK:" + str(black_value))
         ev3.screen.draw_text(0, 80, "WHITE:" + str(white_value))
-    file_handler.close()
-    wait(2000)
     return black_value, white_value
-   
-def do_calibration():
+
+
+def do_calibration(port):
     '''
-    Calibration routine for color sensor on port #1
+    Calibration routine for color sensor for the selected port input
     '''
     # Set the speaker Volume
     # Volume is set as a percentage of maximum
@@ -104,42 +106,64 @@ def do_calibration():
 
     # Setup the Font Type and Size
     ev3.screen.set_font(Font(None,20))
-    # Write your program here.
-    ev3.screen.draw_text(0, 0, "Place Color Sensor")
-    ev3.screen.draw_text(0, 20, "On Black")
-    ev3.speaker.say("Place Color Sensor on Black")
+
+    # Select the port for calibration
+    if port == 1:
+        color_sensor = ColorSensor(Port.S1)
+    elif port == 2:
+        color_sensor = ColorSensor(Port.S2)
+    elif port == 3:
+        color_sensor = ColorSensor(Port.S3)
+    elif port == 3:
+        color_sensor = ColorSensor(Port.S3)
+    else:
+        color_sensor = ColorSensor(Port.S1)
+        ev3.screen.draw_text(20, 40,  "*** ERROR ***")
+        ev3.screen.draw_text(20, 80,  "Port " + str(port) + " not valid")
+        ev3.speaker.say("ERROR... Calibration not performed...")
+        return
+
+    # Prompt the user to calibrate black
+    ev3.screen.draw_text(0, 0,   "Place Color Sensor")
+    ev3.screen.draw_text(0, 20,  "Port " + str(port))
+    ev3.screen.draw_text(0, 40,  "On Black")
+    ev3.speaker.say("Place Color Sensor Port... " + str(port) + "... on Black")
 
     # Loop until the center button in pressed
     # When button pressed, the current value becomes the black value
     center_button_pressed = False
     while center_button_pressed == False:
-        ev3.screen.draw_text(0, 0, "Place Color Sensor")
-        ev3.screen.draw_text(0, 20, "On Black")
-        ev3.screen.draw_text(0,60, "Current Value:" + str(ColorSensor(Port.S1).reflection()))
+        ev3.screen.draw_text(0, 0,   "Place Color Sensor")
+        ev3.screen.draw_text(0, 20,  "Port " + str(port))
+        ev3.screen.draw_text(0, 40,  "On Black")
+        ev3.screen.draw_text(0, 60,  "Current Value: " + str(color_sensor.reflection()))
         wait(100)
         ev3.screen.clear()
         if(ev3.buttons.pressed() == [Button.CENTER]):
             center_button_pressed = True
-            black_value = ColorSensor(Port.S1).reflection()
+            black_value = color_sensor.reflection()
         else:
             center_button_pressed = False
-    ev3.screen.draw_text(0, 0, "Place Color Sensor")
-    ev3.screen.draw_text(0, 20, "On White")
-    ev3.speaker.say("Place Color Sensor on White")
+
+    # Prompt the user to calibrate white
+    ev3.screen.draw_text(0, 0,  "Place Color Sensor")
+    ev3.screen.draw_text(0, 20, "Port " + str(port))
+    ev3.screen.draw_text(0, 40, "On White")
+    ev3.speaker.say("Place Color Sensor Port... " + str(port) + "... on White")
 
     # Loop until the center button in pressed
     # When button pressed, the current value becomes the white value
     center_button_pressed = False
     while center_button_pressed == False:
-        ev3.screen.draw_text(0, 0, "Place Color Sensor")
-        ev3.screen.draw_text(0, 20, "On White")
-        ev3.screen.draw_text(0,60, "Current Value:")
-        ev3.screen.draw_text(0,60, "Current Value:" + str(ColorSensor(Port.S1).reflection()))
+        ev3.screen.draw_text(0, 0,   "Place Color Sensor")
+        ev3.screen.draw_text(0, 20,  "Port " + str(port))
+        ev3.screen.draw_text(0, 40,  "On White")
+        ev3.screen.draw_text(0, 60,  "Current Value: " + str(color_sensor.reflection()))
         wait(100)
         ev3.screen.clear()
         if(ev3.buttons.pressed() == [Button.CENTER]):
             center_button_pressed = True
-            white_value = ColorSensor(Port.S1).reflection()
+            white_value = color_sensor.reflection()
         else:
             center_button_pressed = False
 
@@ -147,12 +171,12 @@ def do_calibration():
     while ev3.buttons.pressed() == [Button.CENTER]:
         wait(100)
 
-    # Write the white and black values into the calibration file
+    # Now write the white and black values into the calibration file
     center_button_pressed = False
-    ev3.screen.draw_text(0, 0, "The Stored Calib")
-    ev3.screen.draw_text(0, 20, "Values are")
-    ev3.screen.draw_text(0,60, "BLACK:" + str(black_value))
-    ev3.screen.draw_text(0,80, "WHITE:" + str(white_value))
+    ev3.screen.draw_text(0, 0,   "The Stored Calib")
+    ev3.screen.draw_text(0, 20,  "Values are")
+    ev3.screen.draw_text(0, 60,  "BLACK: " + str(black_value))
+    ev3.screen.draw_text(0, 80,  "WHITE: " + str(white_value))
     ev3.screen.draw_text(0, 100, "Press cntr btn to exit")
     wait(100)
     while center_button_pressed == False:
@@ -162,34 +186,83 @@ def do_calibration():
             center_button_pressed = False
     ev3.screen.clear()
 
-    # Write Values to a file for use later:
-    file_handler = open("Calibration.txt", "w")
-    str_value = '{}\n{}'.format(black_value, white_value)
-    file_handler.write(str_value)
-    file_handler.close()
+    #--------------------------------------
+    # Update Stored Values
+    # Calibration.txt File Format:
+    #--------------------------------------
+    # Calibration File V1.0
+    # PORT NUMBER, BLACK LEVEL, WHITE LEVEL
+    # 1,0,100
+    # 2,0,100
+    # 3,0,100
+    # 4,0,100
+    create_new_calibration_file = False
+
+    try:
+        file_handler = open("Calibration.txt", "r")
+        calibration_file = file_handler.readlines()
+        file_handler.close()
+        # Check for the correct version of the calibration file
+        # This check will allow for updating the file format in the future
+        if(calibration_file[0].strip() != "Calibration File V1.0"):
+            create_new_calibration_file = True
+            print("Need to create new calibration file...")
+    except OSError:
+        # Set a flag indicating a need to create a new calibration file
+        create_new_calibration_file = True
+
+    # Create a new calibration file
+    if create_new_calibration_file == True:
+        # Create and populate a list with the contents of the new calibration file
+        calibration_file = []
+        calibration_file.append("Calibration File V1.0\n")
+        calibration_file.append("PORT NUMBER,BLACK LEVEL,WHITE LEVEL\n")
+        # Fill in default values for all ports
+        calibration_file.append("1,0,100\n")
+        calibration_file.append("2,0,100\n")
+        calibration_file.append("3,0,100\n")
+        calibration_file.append("4,0,100\n")
+        # Now add the new values for the port we are updating
+        # [port+1] is the line number starting from zero in Calibration.txt
+        calibration_file[port+1] = str(port) + "," + str(black_value) + "," + str(white_value) + "\n"
+        # Write the calibration file contents into Calibration.txt
+        file_handler = open("Calibration.txt", "w")
+        for line in calibration_file:
+            file_handler.write(line)
+        file_handler.close()
+    else:
+        # Calibration file exists, update the port values
+        print("Found Valid Calibration File")
+        calibration_file[port+1] = str(port) + "," + str(black_value) + "," + str(white_value) + "\n"
+        file_handler = open("Calibration.txt", "w")
+        for line in calibration_file:
+            file_handler.write(line)
+        file_handler.close()
 
 ########################################
-# do_calibration()
-# Perform sensor calibration routine
+# do_calibration(port)
+# Perform sensor calibration routine for
+# selected port input.
 #
 # This is an example of the function call 
 # that would be run as needed by the team 
 # ahead of a competition match
 #########################################
-do_calibration()
+port = 1
+do_calibration(port)
 
 ########################################
-# read_calibration()
-# Open file and read calibration Values
+# read_calibration(port)
+# Open file and read calibration values
+# for selected port input.
 #
 # This is an example of how to read the
 # stored calibration values.  This would
 # normally be called a part of running
 # a mission. 
 ########################################
-[read_black,read_white] = read_calibration()
+[read_black,read_white] = read_calibration(port)
 print("Black/Low Color Sensor Value = " + str(read_black))
 print("White/High Color Sensor Value = " + str(read_white))
-
 
 ```
