@@ -1,7 +1,7 @@
 # Calibration Routine For FSS FLL Spring Training Robot
 
 <p align="center">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/BGYnlN3-ZhU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/zU0HW1fr838" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
 
 Calibrating the color sensor is an part important of line following.  A line following routine will typically attempt to turn the robot to keep 
@@ -11,10 +11,10 @@ The threshold is calculated based on a value between the black and white values 
 In order for the threshold to be calculated correctly, the white and black values must be determined.  These values will change based on the lighting in the room and game mat so it is recommended to run a calibration routine ahead of each competitive match.
 
 The python program below contains two functions.
-- __do_calibration():__ Prompts the user to place the robot's color sensor above a black line and then a white line and records the refelected light intensity.  The values are then saved to a file for later use.
-- __read_calibration():__ Retrieves the calibration values stored by the do_calibration() routine and returns them to the user as [black_value,white_value]
+- __do_calibration(port):__ Prompts the user to place the robot's color sensor above a black line and then a white line and records the refelected light intensity.  The values are then saved to a file for later use.  This function takes the color sensor port (1 - 4) the user whiches to calibrate as an input.
+- __read_calibration(port):__ Retrieves the calibration values for the selected port stored by the do_calibration(port) routine and returns them to the user as [black_value,white_value]
 
-The program also contains example function calls.  Execution of the program will perform the do_calibration() and read_calibration() routines.
+The program also contains example function calls.  Execution of the program will perform the do_calibration(port) and read_calibration(port) routines.
 
 This approach is based off of the great example provided here: [https://github.com/bashir2/penguins_fll_2021](https://github.com/bashir2/penguins_fll_2021)
 ```python
