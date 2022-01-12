@@ -117,7 +117,6 @@ def do_calibration(port):
     elif port == 3:
         color_sensor = ColorSensor(Port.S3)
     else:
-        color_sensor = ColorSensor(Port.S1)
         ev3.screen.draw_text(20, 40,  "*** ERROR ***")
         ev3.screen.draw_text(20, 80,  "Port " + str(port) + " not valid")
         ev3.speaker.say("ERROR... Calibration not performed...")
