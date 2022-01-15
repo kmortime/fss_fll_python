@@ -17,6 +17,7 @@ To run on an EV3, you'll need the following:
 
 - USB Cable: Wired programming of the EV3 is supported
 - Wifi: Adding a USB dongle to the EV3 allows for the bot to be programmed using wifi.  Connection instructions provided below.
+- Before connecting to the ev3 robot in a classrom environment it is strongly recommended to first [rename the EV3 robot](./rename.md).
   1. Insert the dongle when the bot is off 
   2. Power up the EV3 and wait for the bot to fully boot
   3. Navigate and select the "Wireless and Networks" menu option
@@ -33,6 +34,7 @@ To run on an EV3, you'll need the following:
 - [Lesson 1](./lesson1.md) : Using the simulator write a python script to move virtual blocks into scoring areas 
 - [Lesson 2](./lesson2.md) : Use the EV3 robot write a python script to move blocks into scoring areas
 - [Lesson 3](./lesson3.md) : Use a new program to solve M09 using both the simulator and real-world EV3 bot.
+- [Rename the EV3 Robot](./rename.md)
 - [Color Sensor Calibration](calibration.md) : Color Sensor Calibration Routine for line following
 ## Code Repo
 Github Repo for FSS Python code:
